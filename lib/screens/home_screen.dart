@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'discover_screen.dart';
+import '../widgets/bottom_nav_rounded.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DiscoverScreen(),
+                          builder: (context) => const BottomNavRoundedIconBar(),
                         ),
                       );
                     },

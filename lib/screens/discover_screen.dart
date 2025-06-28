@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'destination_detail_screen.dart';
-import 'notification_screen.dart';
-import 'ticket_screen.dart';
-import 'bookmark_screen.dart';
 import '../widgets/profile_sidebar.dart';
 import '../controllers/destination_controller.dart';
 import '../services/location_service.dart';
@@ -192,40 +189,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const BookmarkScreen()),
-            );
-          } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const NotificationScreen(),
-              ),
-            );
-          } else if (index == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const TicketScreen()),
-            );
-          }
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.bookmark), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.confirmation_number),
-            label: '',
-          ),
-        ],
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: isLocationSearching ? null : _findNearbyDestinations,
         backgroundColor: isLocationSearching ? Colors.grey : Colors.blue,
